@@ -1,5 +1,5 @@
 import { useState } from "react";
-import CardGrid from "./CardGrid/CardGrid";
+import CardGrid from "../CardGrid/CardGrid";
 
 const MemoryGame: React.FC = () => {
     const [cards, setCards] = useState([
