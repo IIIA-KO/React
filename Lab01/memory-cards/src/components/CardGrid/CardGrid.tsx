@@ -6,7 +6,7 @@ export const CardGrid = ({ cards, onCardClick }: CardGridProps) => {
     return (
         <div className="card-grid">
             {cards.map(card => (
-                <Card key={card.id} id={card.id} isOpen={card.isOpen} onClick={onCardClick} />
+                <Card key={card.id} id={card.id} number={card.number} isOpen={card.isOpen} onClick={onCardClick} />
             ))}
         </div>
     );

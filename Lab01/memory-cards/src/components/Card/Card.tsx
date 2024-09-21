@@ -1,7 +1,7 @@
 import { CardProps } from "./CardProps";
 import './Card.css';
 
-const Card = ({ id, isOpen, onClick }: CardProps) => {
+const Card = ({ id, number, isOpen, onClick }: CardProps) => {
     return (
         <div
             className={`card ${isOpen ? 'open' : ''}`}
@@ -9,7 +9,7 @@ const Card = ({ id, isOpen, onClick }: CardProps) => {
         >
             <div className={`card-inner ${isOpen ? 'flipped' : ''}`}>
                 <div className="card-front">?</div>
-                <div className="card-back">{id}</div>
+                <div className="card-back">{number}</div>
             </div>
         </div>
     );
