@@ -1,3 +1,4 @@
+import './ExternalRedirectPopup.css';
 import { IExternalRedirectPopupProps } from "./IExternalRedirectPopupProps";
 
 const ExternalRedirectPopup = ({
@@ -6,7 +7,10 @@ const ExternalRedirectPopup = ({
     onCancel,
     externalUrl
 }: IExternalRedirectPopupProps) => {
-    if (!isOpen) return null;
+    if (!isOpen) {
+        console.log('Popup is not open');
+        return null;
+    }
 
     return (
         <div className="popup-overlay">
@@ -16,10 +20,10 @@ const ExternalRedirectPopup = ({
                 <p>Are you sure you want to proceed?</p>
 
                 <div className="popup-buttons">
-                    <button onClick={onConfirm} className="cancel-btn">
+                    <button onClick={onCancel} className="cancel-btn">
                         Stay
                     </button>
-                    <button onClick={onCancel} className="cancel-btn">
+                    <button onClick={onConfirm} className="cancel-btn">
                         Leave
                     </button>
                 </div>
