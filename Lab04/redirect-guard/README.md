@@ -1,50 +1,27 @@
-# React + TypeScript + Vite
+# Redirect Guard Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+The **Redirect Guard** project is a React application that provides a mechanism to confirm user intent before redirecting to external links. This is achieved by displaying a popup that asks the user to confirm their action.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Task Description
 
-## Expanding the ESLint configuration
+1. Implement a custom hook `useExternalRedirect` to manage the state of the popup and handle external link clicks.
+2. Create a context `ExternalRedirectContext` to provide the state and functions from the hook to the components that need them.
+3. Develop a component `ExternalRedirectPopup` that displays a confirmation dialog when a user clicks on an external link.
+4. Ensure that the popup is styled appropriately and is responsive.
+5. Integrate the popup functionality into existing components (`Home` and `About`) using the `ExternalLink` component.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Features
 
-- Configure the top-level `parserOptions` property like this:
+- **External Link Handling**: Intercepts clicks on external links and displays a confirmation popup.
+- **Popup Confirmation**: Users can choose to proceed to the external link or cancel the action.
+- **Context API**: Utilizes React's Context API to manage and provide state across components.
+- **Responsive Design**: The popup is styled to be responsive and user-friendly.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Implementation Details
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- **Custom Hook**: `useExternalRedirect` manages the popup state and provides functions to handle link clicks and popup actions.
+- **Context Provider**: `ExternalRedirectProvider` wraps the application to provide the redirect context.
+- **Popup Component**: `ExternalRedirectPopup` is responsible for rendering the confirmation dialog.
+- **Link Component**: `ExternalLink` uses the custom hook to handle clicks and prevent default link behavior.
