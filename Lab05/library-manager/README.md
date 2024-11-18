@@ -23,7 +23,6 @@ RTK Query was chosen as the state management library for this project. It provid
 ## Implementation Details
 
 - **RTK Query**: Used for managing API requests and caching the state of books.
-- **Context API**: Implemented for theme management, allowing users to toggle between light and dark modes.
 - **React Components**: Modular components for book cards, statistics, and filters.
 
 ## How It Was Done
