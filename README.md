@@ -26,6 +26,11 @@ This repository contains a series of laboratory projects developed using React a
 - **Description**: A project that implements a mechanism to confirm user intent before redirecting to external links. It uses a popup to ask for user confirmation.
 - **Features**: External link handling, popup confirmation, context API usage, and responsive design.
 
+### 5. [Library Manager](Lab05/library-manager)
+
+- **Description**: A single-page application for managing a collection of books. It demonstrates the use of RTK Query for state management and API interactions.
+- **Features**: Book management (add, update, delete), filtering by title or author, and modular component structure.
+
 ## How to Navigate
 
 Each project is contained within its own folder. To explore a specific project, navigate to its respective directory and follow the instructions in its `README.md` file for setup and execution.
