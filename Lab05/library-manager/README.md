@@ -49,7 +49,7 @@ RTK Query was chosen as the state management library for this project. It provid
 
 2. **Start the Mock Server**:
    ```bash
-   json-server --watch db.json --port 3001
+   (npx) json-server --watch db.json --port 3001
    ```
 
 3. **Run the Application**:
