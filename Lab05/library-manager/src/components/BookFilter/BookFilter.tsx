@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { IBookFilterProps } from "./IBookFilterProps";
 import { useDebounce } from "../../hooks/useDebounce";
 
-export const BoolFilter = ({ onFilterChange }: IBookFilterProps) => {
+export const BookFilter = ({ onFilterChange }: IBookFilterProps) => {
     const [filter, setFilter] = useState('');
     const debouncedFilter = useDebounce(filter, 500);
 

@@ -2,11 +2,11 @@ import { IBookCardProps } from "./IBookCardProps";
 import { memo, useCallback } from "react";
 
 export const BookCard = memo(({ book, onUpdateBook, onDeleteBook }: IBookCardProps) => {
-    const handleRatingChange = useCallback( (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const handleRatingChange = useCallback((e: React.ChangeEvent<HTMLSelectElement>) => {
         onUpdateBook({ ...book, rating: Number(e.target.value) });
     }, [book, onUpdateBook]);
 
-    const handleReadChange = useCallback( (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleReadChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
         onUpdateBook({ ...book, isRead: e.target.checked });
     }, [book, onUpdateBook]);
 

@@ -20,7 +20,7 @@ export const api = createApi({
         updateBook: builder.mutation<IBook, Partial<IBook>>({
             query: ({ id, ...rest }) => ({
                 url: `/books/${id}`,
-                method: 'PUT',
+                method: 'PATCH',
                 body: rest,
             }),
             invalidatesTags: ['Books'],
