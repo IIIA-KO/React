@@ -9,7 +9,8 @@ export const filterReadBooks = (books: IBook[]): IBook[] => {
 }
 
 export const calculateAverageRating = (books: IBook[]): number => {
-    if (books.length === 0) return 0;
-    const sum = books.reduce((acc, book) => acc + book.rating, 0);
-    return Number((sum / books.length).toFixed(1));
-}
+    const ratedBooks = books.filter(book => book.rating > 0);
+    if (ratedBooks.length === 0) return 0;
+    const sum = ratedBooks.reduce((acc, book) => acc + book.rating, 0);
+    return Number((sum / ratedBooks.length).toFixed(1));
+};
