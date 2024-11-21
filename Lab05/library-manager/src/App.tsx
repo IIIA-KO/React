@@ -1,10 +1,13 @@
 import { useState } from 'react'
-import { BookCard } from './components/BookCard/BookCard'
+//import { BookCard } from './components/BookCard/BookCard'
 import { Statistics } from './components/Statistics/Statistics'
 import { BookFilter } from './components/BookFilter/BookFilter'
 import { useDeleteBookMutation, useGetBooksQuery, useUpdateBookMutation } from './store/api'
 import { LoadingError } from './components/LoadingError/LoadingError'
 import { AddBookForm } from './components/AddBookForm/AddBookForm'
+import { lazy, Suspense } from "react";
+
+const BookCard = lazy(() => import('./components/BookCard/BookCard').then((module) => ({ default: module.BookCard })));
 
 function App() {
   const { data: books, isLoading, error } = useGetBooksQuery()
@@ -30,16 +33,18 @@ function App() {
 
       <AddBookForm />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {filteredBooks?.map((book) => (
-          <BookCard
-            key={book.id}
-            book={book}
-            onUpdateBook={updateBook}
-            onDeleteBook={deleteBook}
-          />
-        ))}
-      </div>
+      <Suspense fallback={<div>Loading...</div>}>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {filteredBooks?.map((book) => (
+            <BookCard
+              key={book.id}
+              book={book}
+              onUpdateBook={updateBook}
+              onDeleteBook={deleteBook}
+            />
+          ))}
+        </div>
+      </Suspense>
     </div>
   )
 }
