@@ -1,16 +1,9 @@
 {
   "books": [
     {
-      "title": "The Lord of the Rings",
-      "author": "J. R. R. Tolkien",
-      "rating": 3,
-      "isRead": false,
-      "id": "1"
-    },
-    {
       "title": "1984",
       "author": "George Orwell",
-      "rating": 5,
+      "rating": 4,
       "isRead": true,
       "id": "2"
     },

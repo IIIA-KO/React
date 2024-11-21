@@ -20,6 +20,19 @@ RTK Query was chosen as the state management library for this project. It provid
 - **Filtering**: Filter books based on title or author.
 - **State Management**: Utilize RTK Query for managing the application's state and API interactions.
 
+## Best Practices in React Programming
+
+1. **State Management**:
+   - **RTK Query**: Efficiently handles server-side state and API interactions, reducing boilerplate code.
+   - **Context API**: Used for managing global state, such as theme settings, without the need for additional libraries.
+
+2. **Lazy Loading Components**:
+   - **React.lazy and Suspense**: Used `React.lazy` for lazy loading components, enhancing performance by loading components only when needed.
+
+3. **Performance Optimization**:
+   - **Memoization**: Use of `React.memo` and hooks like `useMemo` and `useCallback` to prevent unnecessary re-renders and optimize performance.
+   -  **Debouncing**: Implementation of `useDebounce` to limit the rate of function execution, particularly useful for handling frequent events like input changes.
+
 ## Implementation Details
 
 - **RTK Query**: Used for managing API requests and caching the state of books.
@@ -48,7 +61,7 @@ RTK Query was chosen as the state management library for this project. It provid
 
 2. **Start the Mock Server**:
    ```bash
-   json-server --watch db.json --port 3001
+   (npx) json-server --watch db.json --port 3001
    ```
 
 3. **Run the Application**:

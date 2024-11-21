@@ -31,6 +31,15 @@ This repository contains a series of laboratory projects developed using React a
 - **Description**: A single-page application for managing a collection of books. It demonstrates the use of RTK Query for state management and API interactions.
 - **Features**: Book management (add, update, delete), filtering by title or author, and modular component structure.
 
+### 6. [Advanced React Practices](Lab05/library-manager)
+
+- **Description**: This project focuses on advanced React practices such as context, memoization, and code organization. It builds upon the Library Manager project to demonstrate best practices in component-oriented programming.
+- **Features**: 
+  - **State Management**: Utilizes RTK Query for efficient server-side state management.
+  - **Lazy Loading**: Implements `React.lazy` and `Suspense` for performance optimization.
+  - **Performance Optimization**: Uses `React.memo`, `useMemo`, `useCallback`, and `useDebounce` to enhance performance and reduce unnecessary re-renders.
+  - **Context API**: Manages global state, such as theme settings, without additional libraries.
+
 ## How to Navigate
 
 Each project is contained within its own folder. To explore a specific project, navigate to its respective directory and follow the instructions in its `README.md` file for setup and execution.

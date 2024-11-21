@@ -1,13 +1,18 @@
 import { IBookCardProps } from "./IBookCardProps";
+import { memo, useCallback } from "react";
 
-export const BookCard = ({ book, onUpdateBook, onDeleteBook }: IBookCardProps) => {
-    const handleRatingChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+export const BookCard = memo(({ book, onUpdateBook, onDeleteBook }: IBookCardProps) => {
+    const handleRatingChange = useCallback((e: React.ChangeEvent<HTMLSelectElement>) => {
         onUpdateBook({ ...book, rating: Number(e.target.value) });
-    }
+    }, [book, onUpdateBook]);
 
-    const handleReadChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleReadChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
         onUpdateBook({ ...book, isRead: e.target.checked });
-    }
+    }, [book, onUpdateBook]);
+
+    const handleDelete = useCallback(() => {
+        onDeleteBook(book.id);
+    }, [book.id, onDeleteBook]);
 
     return (
         <div className="border p-4 rounded shadow">
@@ -42,11 +47,11 @@ export const BookCard = ({ book, onUpdateBook, onDeleteBook }: IBookCardProps) =
             </div>
 
             <button
-                onClick={() => onDeleteBook(book.id)}
+                onClick={handleDelete}
                 className="mt-4 bg-red-500 text-white px-4 py-1 rounded w-full"
             >
-                Видалити
+                Delete
             </button>
         </div>
     );
-}
+});
